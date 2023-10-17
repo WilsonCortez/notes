@@ -11,7 +11,7 @@ export default function Notes(props: any){
     }else if(data === 9){
         return msg = 'Aprovado'
     }else {
-        msg = 'Nota inválida';
+        msg = 'Nota inválida ';
       }
     return(
         <>
