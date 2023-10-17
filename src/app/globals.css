@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.page_full{
+  background: #0f506a;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+h1{
+  padding-top: 250px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+h3{
+  font-size: 30px;
+}
 
 body {
   color: rgb(var(--foreground-rgb));

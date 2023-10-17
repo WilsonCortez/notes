@@ -1,21 +1,25 @@
 import React from 'react';
 
-export default function Notes(props: any){
-    const {data} = props;
-    let msg: string;
+interface Props {
+    data: number 
+}
+
+export default function Notes(props: Props){
+    let data = props.data
+    if(data > 5) data = 5;
+    let msg: string = 'As tuas notas ainda não foram lançadas';
+    const emojs = ['','😭','😢','😐','😀','😁'];
+    const reacoes = emojs[data]
+    if(data === 1)msg = "Reprovado ";
+    if(data === 2)msg = "Recurso ";
+    if(data === 3)msg = "Exame ";
+    if(data === 4) msg = "Aprovado ";
+    if(data === 5)msg = "Dispensado ";
     
-    if(data === 1 || data  <= 4){
-       return msg = 'Reprovado'
-    }else if(data === 5 || data  <= 9){
-        return msg = 'Recurso'
-    }else if(data === 9){
-        return msg = 'Aprovado'
-    }else {
-        msg = 'Nota inválida ';
-      }
     return(
         <>
-            Carregando Notes...{msg}
+            <h1>{msg}</h1>   
+            <h3>{reacoes.repeat(data) + '😐'.repeat(5 - data)}</h3>        
         </>
     )
 }
